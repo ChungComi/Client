@@ -8,9 +8,12 @@
 ## 🔖 기능
 
 <p align="center"> 
-  <img width="45%" alt="" src="">
+  <img width="45%" alt="" src="https://github.com/ChungComi/Server/blob/main/src/main/resources/static/%EA%B8%B0%EB%8A%A5.jpg">
   <img width="45%" alt="" src="">
 </p>
+
+
+
 
 <br>
 
@@ -47,9 +50,12 @@
 
 ### 서버 및 데이터베이스 아키텍처
 <p align="center">
-  <img width="40%" alt="" src="">
+  <img width="40%" alt="" src="https://github.com/ChungComi/Server/blob/main/src/main/resources/static/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98.jpg">
   <img width="35%" alt="" src="">
 </p>
+
+
+
 
 <br>
 

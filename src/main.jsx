@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./components/ui/app.jsx";
-import "./components/ui/css/index.css"
+import App from "./app.jsx";
+import "./components/ui/css/index.css";
+import { BrowserRouter as Router } from "react-router-dom"; // ✅ 수정
 
 ReactDOM.createRoot(document.querySelector("#app")).render(
     <React.StrictMode>
-        <div>
-            <App></App>
-        </div>
+        <Router>
+            <App />
+        </Router>
     </React.StrictMode>
 );

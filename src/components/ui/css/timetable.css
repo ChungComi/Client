@@ -2,15 +2,8 @@
     width: 300px;
     margin: 3px auto;
     border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 15px;
-}
-
-.timetable-header {
-    display: flex;
-    justify-content: space-between; /* 좌측(시간표) - 우측(+) 정렬 */
-    align-items: center;
     padding: 5px 10px;
+    border-radius: 15px;
 }
 
 .timetable button {
@@ -34,6 +27,7 @@
 
 .timetable th, .timetable td {
     border: 1px solid #ddd;
-    padding: 2px;
+    padding: 1px;
     text-align: center;
+    font-size: 14px;
 }

@@ -4,10 +4,6 @@ import "./css/timetable.css"
 const Timetable = () => {
     return (
         <div className="timetable">
-            <div className="timetable-header">
-                <span>시간표</span>
-                <button>+</button>
-            </div>
             <table>
                 <thead>
                 <tr>

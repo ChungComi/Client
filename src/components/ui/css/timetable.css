@@ -1,0 +1,39 @@
+.timetable {
+    width: 300px;
+    margin: 3px auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.timetable-header {
+    display: flex;
+    justify-content: space-between; /* 좌측(시간표) - 우측(+) 정렬 */
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.timetable button {
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: auto;
+}
+
+.timetable button:hover {
+    background: #ccc;
+}
+
+.timetable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.timetable th, .timetable td {
+    border: 1px solid #ddd;
+    padding: 2px;
+    text-align: center;
+}

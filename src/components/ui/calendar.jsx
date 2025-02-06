@@ -53,7 +53,7 @@ const Calendar = () => {
         <div className="calendar">
             <div className="calendar-header">
                 <span className="prev" onClick={() => changeMonth(-1)}>&#9665;</span>
-                <h2>{currentYear}년 {currentMonth + 1}월</h2>
+                <h3>{currentYear}년 {currentMonth + 1}월</h3>
                 <span className="next" onClick={() => changeMonth(1)}>&#9655;</span>
             </div>
             <table>

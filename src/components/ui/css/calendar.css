@@ -1,8 +1,8 @@
 .calendar {
     width: 300px;
-    margin: 3px auto;
+    margin: 1px auto;
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 15px;
 }
 
@@ -10,6 +10,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 3px 0; /* 위아래 간격 줄이기 */
+    font-size: 14px;
 }
 
 table {
@@ -19,10 +21,16 @@ table {
 
 th, td {
     width: 14.2%;
-    padding: 0;
+    padding: 2px 3px; /* 숫자 위아래 간격 줄이기 */
     text-align: center;
     border: 1px solid #ddd;
-    height: 50px;
+    height: 30px; /* 칸 높이 줄이기 */
+    font-size: 14px;
+}
+
+.calendar thead th {
+    padding: 2px 0; /* thead 위아래 간격 줄이기 */
+    font-size: 13px;
 }
 
 .prev, .next {
@@ -31,8 +39,8 @@ th, td {
 }
 
 button {
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     border: none;
     background: none;
     font-size: 1.2em;
@@ -42,4 +50,3 @@ button {
 button:hover {
     background-color: #ddd;
 }
-

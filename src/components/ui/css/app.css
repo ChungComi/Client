@@ -1,0 +1,5 @@
+.main-content {
+    flex: 1;
+    padding-top: 80px; /* 헤더 높이만큼 여백 추가 */
+    padding-bottom: 50px; /* 네비게이션 바 높이만큼 여백 추가 */
+}

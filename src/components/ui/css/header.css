@@ -1,0 +1,41 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 왼쪽 제목, 오른쪽 버튼 */
+}
+
+.header-title {
+    margin: 0;
+}
+
+.mypage-button-container{
+    width: 30%;
+}
+
+.mypage-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    width: auto;
+    padding: 2px 6px; /* 버튼 크기 더 작게 조정 */
+    font-size: 10px;  /* 글자 크기 줄이기 */
+    font-weight: bold;
+    border-radius: 3px; /* 버튼 모서리 더 둥글게 */
+    cursor: pointer;
+    margin-right: 15px; /* 너무 오른쪽으로 붙지 않게 조정 */
+}
+
+.mypage-button:hover {
+    background: #0056b3;
+}

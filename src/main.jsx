@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import ChoongBoong from "./screen/chungboong.jsx";
+import App from "./components/ui/app.jsx";
+import "./components/ui/css/index.css"
 
 ReactDOM.createRoot(document.querySelector("#app")).render(
     <React.StrictMode>
         <div>
-            <ChoongBoong></ChoongBoong>
+            <App></App>
         </div>
     </React.StrictMode>
 );

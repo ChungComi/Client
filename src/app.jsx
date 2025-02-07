@@ -6,6 +6,10 @@ import Register from "./screen/register.jsx";
 import Navbar from "./components/ui/navbar.jsx";
 import Header from "./components/ui/header.jsx";
 import "./components/ui/css/app.css"
+import MyPage from "./components/ui/myPage.jsx";
+import InterestInfo from "./components/ui/interestInfo.jsx";
+import Board from "./components/ui/board.jsx";
+import Post from "./components/ui/post.jsx";
 const App = () => {
     const location = useLocation();
     const hideNavbar = location.pathname === "/" || location.pathname === "/register";
@@ -18,6 +22,10 @@ const App = () => {
                     <Route path="/" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/home" element={<Chungboong />} />
+                    <Route path="/mypage" element={<MyPage/>}/>
+                    <Route path="/interestInfo" element={<InterestInfo/>}/>
+                    <Route path="/board" element={<Board/>}/>
+                    <Route path="/post" element={<Post/>}/>
                 </Routes>
             </div>
             {!hideNavbar && <Navbar />}

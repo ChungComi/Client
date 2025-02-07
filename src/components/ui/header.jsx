@@ -10,7 +10,10 @@ const Header = () => {
     const pageTitles = {
         "/": "로그인",
         "/register": "회원가입",
-        "/home": "홈"
+        "/home": "홈",
+        "/mypage": "마이 페이지",
+        "/interestInfo": "관심사",
+        "/board": "게시판"
     };
 
     // 마이페이지 버튼 클릭 시 이동

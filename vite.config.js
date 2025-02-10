@@ -44,6 +44,13 @@ export default defineConfig({
     },
     server: {
         host: true, // 네트워크에서 접근 가능하게 설정
-        port: 5173 // 기본 포트 유지
+        port: 5173, // 기본 포트 유지
+        proxy: {
+            '/auth': {
+                target: 'http://localhost:8080',
+                changeOrigin: true,
+                secure: false,
+            },
+        }
     }
 });

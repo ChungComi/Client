@@ -1,5 +1,5 @@
 import React from 'react';
-import '../ui/css/interestInfo.css';
+import '../components/ui/css/interestInfo.css';
 
 const TechCompanyInfo = () => {
     return (

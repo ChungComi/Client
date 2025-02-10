@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../ui/css/mypage.css';
+import '../components/ui/css/mypage.css';
 
 const MyPage = () => {
     const [techStack, setTechStack] = useState(["Python", "FastAPI", "React", "Docker", "AWS"]);

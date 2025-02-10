@@ -6,10 +6,10 @@ import Register from "./screen/register.jsx";
 import Navbar from "./components/ui/navbar.jsx";
 import Header from "./components/ui/header.jsx";
 import "./components/ui/css/app.css"
-import MyPage from "./components/ui/myPage.jsx";
-import InterestInfo from "./components/ui/interestInfo.jsx";
-import Board from "./components/ui/board.jsx";
-import Post from "./components/ui/post.jsx";
+import MyPage from "./screen/myPage.jsx";
+import InterestInfo from "./screen/interestInfo.jsx";
+import Board from "./screen/board.jsx";
+import Post from "./screen/post.jsx";
 const App = () => {
     const location = useLocation();
     const hideNavbar = location.pathname === "/" || location.pathname === "/register";

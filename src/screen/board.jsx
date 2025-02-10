@@ -1,5 +1,5 @@
 import React from 'react';
-import '../ui/css/board.css';
+import '../components/ui/css/board.css';
 
 const Board = () => {
     return (

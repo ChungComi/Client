@@ -157,6 +157,32 @@ const Calendar = () => {
     setContent("");
   };
 
+  // 등록된 일정 삭제 - schedule.id를 이용하여 DELETE 요청 보내기
+  const handleDeleteSchedule = async (scheduleId) => {
+    try {
+      const response = await customFetch(`/schedule/${scheduleId}`, {
+        method: "DELETE",
+      });
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        alert("일정이 삭제되었습니다!");
+        // 삭제 후 선택한 날짜와 월별 일정 목록 갱신
+        if (selectedDate) {
+          const formattedMonth = ("0" + selectedDate.month).slice(-2);
+          const formattedDay = ("0" + selectedDate.day).slice(-2);
+          const dateStr = `${selectedDate.year}-${formattedMonth}-${formattedDay}T00:00:00`;
+          fetchSchedulesForDate(dateStr);
+        }
+        fetchAllSchedulesForMonth();
+      } else {
+        alert("삭제 실패: " + data.result.message);
+      }
+    } catch (error) {
+      alert("삭제 중 오류 발생: " + error.message);
+    }
+  };
+
   // 컴포넌트 마운트 및 currentMonth 변경 시, 월별 일정 조회
   useEffect(() => {
     fetchAllSchedulesForMonth();
@@ -220,7 +246,18 @@ const Calendar = () => {
                   ) : (
                     <ul>
                       {schedules.map((schedule, index) => (
-                        <li key={index}>{schedule.content}</li>
+                        <li
+                          key={index}
+                          style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
+                        >
+                          <span>{schedule.content}</span>
+                          <button
+                            onClick={() => handleDeleteSchedule(schedule.id)}
+                            className="delete-btn"
+                          >
+                            -
+                          </button>
+                        </li>
                       ))}
                     </ul>
                   )}

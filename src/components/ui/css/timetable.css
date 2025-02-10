@@ -1,3 +1,4 @@
+/* 타임테이블 기본 스타일 */
 .timetable {
     width: 300px;
     margin: 3px auto;
@@ -25,7 +26,8 @@
     border-collapse: collapse;
 }
 
-.timetable th, .timetable td {
+.timetable th,
+.timetable td {
     border: 1px solid #ddd;
     padding: 1px;
     text-align: center;
@@ -35,97 +37,4 @@
 .timetable-header {
     display: flex;
     justify-content: flex-end;
-}
-
-/* 모달 오버레이 */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* 모달 컨테이너 */
-.modal {
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-/* 모달 섹션 */
-.modal-section {
-  margin-bottom: 15px;
-}
-
-.modal-section p {
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-/* 요일 버튼 그룹 */
-.day-buttons {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.day-buttons button {
-  margin-right: 8px;
-  margin-bottom: 8px;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  background: #f8f8f8;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.2s, border 0.2s;
-}
-
-.day-buttons button:hover {
-  background: #eaeaea;
-}
-
-.day-buttons button.selected {
-  background: #007bff;
-  color: #fff;
-  border-color: #007bff;
-}
-
-/* 모달 액션 버튼 */
-.modal-actions {
-  text-align: right;
-}
-
-.modal-actions button {
-  padding: 8px 16px;
-  margin-left: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.modal-actions button:first-child {
-  background: #28a745;
-  color: #fff;
-}
-
-.modal-actions button:first-child:hover {
-  background: #218838;
-}
-
-.modal-actions button:last-child {
-  background: #dc3545;
-  color: #fff;
-}
-
-.modal-actions button:last-child:hover {
-  background: #c82333;
 }

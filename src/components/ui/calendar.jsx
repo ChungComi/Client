@@ -32,8 +32,8 @@ const Calendar = () => {
   const fetchSchedulesForDate = async (dateStr) => {
     try {
       const response = await customFetch(
-        `/schedule?date=${encodeURIComponent(dateStr)}`,
-        { method: "GET" }
+          `/schedule?date=${encodeURIComponent(dateStr)}`,
+          { method: "GET" }
       );
       const data = await response.json();
       // 응답 JSON 구조가 { success, code, result: { data: [...] } } 인 경우
@@ -100,18 +100,18 @@ const Calendar = () => {
       const hasSchedule = monthSchedules.some((schedule) => {
         const scheduleDate = new Date(schedule.date);
         return (
-          scheduleDate.getFullYear() === currentYear &&
-          scheduleDate.getMonth() === currentMonth &&
-          scheduleDate.getDate() === day
+            scheduleDate.getFullYear() === currentYear &&
+            scheduleDate.getMonth() === currentMonth &&
+            scheduleDate.getDate() === day
         );
       });
       days.push(
-        <td key={day}>
-          <button onClick={() => openModal(day)}>
-            {day}
-            {hasSchedule && <span className="schedule-dot"></span>}
-          </button>
-        </td>
+          <td key={day}>
+            <button onClick={() => openModal(day)}>
+              {day}
+              {hasSchedule && <span className="schedule-dot"></span>}
+            </button>
+          </td>
       );
     }
     // 7일씩 잘라서 행(tr)로 묶기
@@ -189,20 +189,20 @@ const Calendar = () => {
   }, [currentMonth]);
 
   return (
-    <div className="calendar">
-      <div className="calendar-header">
+      <div className="calendar">
+        <div className="calendar-header">
         <span className="prev" onClick={() => changeMonth(-1)}>
           &#9665;
         </span>
-        <h3>
-          {currentYear}년 {currentMonth + 1}월
-        </h3>
-        <span className="next" onClick={() => changeMonth(1)}>
+          <h3>
+            {currentYear}년 {currentMonth + 1}월
+          </h3>
+          <span className="next" onClick={() => changeMonth(1)}>
           &#9655;
         </span>
-      </div>
-      <table>
-        <thead>
+        </div>
+        <table>
+          <thead>
           <tr>
             <th>일</th>
             <th>월</th>
@@ -212,72 +212,72 @@ const Calendar = () => {
             <th>금</th>
             <th>토</th>
           </tr>
-        </thead>
-        <tbody>{generateCalendar()}</tbody>
-      </table>
+          </thead>
+          <tbody>{generateCalendar()}</tbody>
+        </table>
 
-      {/* 모달 창 */}
-      {modalVisible && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <div className="modal-header">
-              <h3>
-                {selectedDate?.year}년 {selectedDate?.month}월 {selectedDate?.day}일 일정 등록
-              </h3>
-            </div>
-            <div className="modal-body">
-              {/* 입력칸과 조회된 일정 목록을 나란히 표시 */}
-              <div className="modal-body-content" style={{ display: "flex", gap: "1rem" }}>
-                {/* 일정 입력 영역 */}
-                <div className="input-section" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-                  <textarea
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                    placeholder="일정 내용을 입력하세요..."
-                    style={{ width: "100%", height: "150px", marginBottom: "0.5rem" }}
-                  ></textarea>
-                  <button onClick={handleSaveSchedule}>저장</button>
+        {/* 모달 창 */}
+        {modalVisible && (
+            <div className="modal-overlay">
+              <div className="modal">
+                <div className="modal-header">
+                  <h3>
+                    {selectedDate?.year}년 {selectedDate?.month}월 {selectedDate?.day}일 일정 등록
+                  </h3>
                 </div>
-                {/* 조회된 일정 목록 영역 */}
-                <div className="schedule-list" style={{ flex: 1 }}>
-                  <h4>등록된 일정</h4>
-                  {schedules.length === 0 ? (
-                    <p>등록된 일정이 없습니다.</p>
-                  ) : (
-                    <ul>
-                      {schedules.map((schedule, index) => (
-                        <li
-                          key={index}
-                          style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
-                        >
-                          <span>{schedule.content}</span>
-                          <button
-                            onClick={() => handleDeleteSchedule(schedule.id)}
-                            className="delete-btn"
-                          >
-                            -
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                <div className="modal-body">
+                  {/* 입력칸과 조회된 일정 목록을 나란히 표시 */}
+                  <div className="modal-body-content" style={{ display: "flex", gap: "1rem" }}>
+                    {/* 일정 입력 영역 */}
+                    <div className="input-section" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                  <textarea
+                      value={content}
+                      onChange={(e) => setContent(e.target.value)}
+                      placeholder="일정 내용을 입력하세요..."
+                      style={{ width: "100%", height: "150px", marginBottom: "0.5rem" }}
+                  ></textarea>
+                      <button onClick={handleSaveSchedule}>저장</button>
+                    </div>
+                    {/* 조회된 일정 목록 영역 */}
+                    <div className="schedule-list" style={{ flex: 1 }}>
+                      <h4>등록된 일정</h4>
+                      {schedules.length === 0 ? (
+                          <p>등록된 일정이 없습니다.</p>
+                      ) : (
+                          <ul>
+                            {schedules.map((schedule, index) => (
+                                <li
+                                    key={index}
+                                    style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
+                                >
+                                  <span>{schedule.content}</span>
+                                  <button
+                                      onClick={() => handleDeleteSchedule(schedule.id)}
+                                      className="delete-btn"
+                                  >
+                                    -
+                                  </button>
+                                </li>
+                            ))}
+                          </ul>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="modal-footer">
+                  <button
+                      onClick={() => {
+                        setModalVisible(false);
+                        setContent("");
+                      }}
+                  >
+                    취소
+                  </button>
                 </div>
               </div>
             </div>
-            <div className="modal-footer">
-              <button
-                onClick={() => {
-                  setModalVisible(false);
-                  setContent("");
-                }}
-              >
-                취소
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
   );
 };
 

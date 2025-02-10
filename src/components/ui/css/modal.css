@@ -1,3 +1,4 @@
+/* 타임테이블 기본 스타일 */
 .timetable {
   width: 300px;
   margin: 3px auto;
@@ -86,7 +87,6 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-  flex-wrap: wrap;
 }
 
 .day-buttons button {
@@ -160,6 +160,7 @@
   background: #c82333;
 }
 
+/* 삭제 버튼 (일정 항목 오른쪽에 있는 - 버튼) */
 .delete-btn {
   background: #dc3545;
   color: #fff;
@@ -179,3 +180,11 @@
   background: #c82333;
 }
 
+/* 추가된 인풋 필드 스타일 (수업명, 교수명 입력) */
+.modal-section input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

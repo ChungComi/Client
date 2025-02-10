@@ -1,0 +1,26 @@
+/* 버튼 기본 스타일 */
+.cafeteria-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff; /* 기본 색상 */
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* 버튼 호버 효과 */
+.cafeteria-button:hover {
+    background-color: #0056b3; /* 어두운 파란색 */
+    border-color: #0056b3;
+}
+
+/* 버튼 클릭 효과 */
+.cafeteria-button:active {
+    transform: scale(0.95); /* 클릭 시 살짝 작아지는 효과 */
+}

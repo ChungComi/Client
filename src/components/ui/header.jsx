@@ -13,7 +13,8 @@ const Header = () => {
         "/home": "홈",
         "/mypage": "마이 페이지",
         "/interestInfo": "관심사",
-        "/board": "게시판"
+        "/board": "게시판",
+        "/cafeteria": "식단표"
     };
 
     // 마이페이지 버튼 클릭 시 이동

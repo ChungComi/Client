@@ -1,40 +1,87 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-.rounded-box {
-    width: 300px;
-    height: 100px;
+/* 전체 컨테이너 스타일 */
+.cafeteria-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 30px auto;
+    padding: 20px;
     border-radius: 15px;
-    margin: 0;
-    display: block;
+    background: #f8f9fa;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 1.2em;
-    color: #333;
-    border: 2px solid #ccc;
-    position: relative;
-    padding: 10px;
 }
 
-.button-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+/* ✅ 기숙사 선택 및 날짜 선택 UI */
+.selector-container {
     display: flex;
-    gap: 5px;
-    white-space: nowrap
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
 }
 
-.button-container button {
-    padding: 1px 8px;
-    cursor: pointer;
-    border-radius: 20px;
+.selector-container select,
+.selector-container input {
+    padding: 8px;
+    font-size: 14px;
     border: 2px solid #ccc;
-    font-size: 10px;
-    white-space: nowrap
+    border-radius: 5px;
 }
 
-.button-container button:hover {
-    background: #ccc;
+.selector-container button {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.selector-container button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* ✅ 제목 스타일 */
+.cafeteria-container h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+/* ✅ 메뉴 박스 */
+.menu-box {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    text-align: left;
+}
+
+/* ✅ 메뉴 내용 */
+.menu-content h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.menu-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* 에러 메시지 */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* 기본 안내 메시지 */
+.info {
+    color: gray;
+    font-size: 14px;
 }

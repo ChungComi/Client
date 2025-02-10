@@ -60,6 +60,16 @@ export default defineConfig({
                 target: 'http://localhost:8080',
                 changeOrigin: true,
                 secure: false,
+            },
+            '/api/dorm': {
+                target: 'http://localhost:8000',
+                changeOrigin: true,
+                secure: false,
+            },
+            '/api/cafeteria': {
+                target: 'http://localhost:8000',
+                changeOrigin: true,
+                secure: false,
             }
         }
     }

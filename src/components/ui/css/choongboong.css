@@ -24,3 +24,17 @@
 .cafeteria-button:active {
     transform: scale(0.95); /* 클릭 시 살짝 작아지는 효과 */
 }
+
+.button-container2 {
+    display: flex;
+    gap: 10px; /* 버튼 사이 간격 추가 */
+    justify-content: center; /* 가운데 정렬 */
+    padding: 20px;
+}
+
+.button-container2 button {
+    border: black 1px solid;
+    border-radius: 10px;
+    justify-content: center; /* 가운데 정렬 */
+    padding: 10px;
+}

@@ -12,10 +12,14 @@ const ChoongBoong = () => {
         <div>
             <Calendar />
             <Timetable />
-            <button className="cafeteria-button" onClick={() => navigate("/cafeteria")}>
-                식단 보기
-            </button>
-            <Announcement />
+            <div className="button-container2"> {/* ✅ 버튼 한 줄 정렬 */}
+                <button onClick={() => navigate("/cafeteria")}>
+                    식단 보기
+                </button>
+                <button onClick={() => navigate("/announcement")}>
+                    공지사항 보기
+                </button>
+            </div>
         </div>
     );
 };

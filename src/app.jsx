@@ -11,6 +11,7 @@ import InterestInfo from "./screen/interestInfo.jsx";
 import Board from "./screen/board.jsx";
 import Post from "./screen/post.jsx";
 import Cafeteria from "./components/ui/cafeteria.jsx";
+import Announcement from "./components/ui/announcement.jsx";
 
 const App = () => {
     const location = useLocation();
@@ -29,6 +30,7 @@ const App = () => {
                     <Route path="/board" element={<Board />} />
                     <Route path="/post" element={<Post />} />
                     <Route path="/cafeteria" element={<Cafeteria />} />
+                    <Route path="/announcement" element={<Announcement/>}/>
                 </Routes>
             </div>
             {!hideNavbarAndHeader && <Navbar />} {/* 로그인 & 회원가입 페이지에서는 Navbar 숨김 */}

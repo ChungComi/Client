@@ -70,6 +70,21 @@ export default defineConfig({
                 target: 'http://localhost:8000',
                 changeOrigin: true,
                 secure: false,
+            },
+            '/api/member': {
+                target: 'http://localhost:8080',
+                changeOrigin: true,
+                secure: false,
+            },
+            '/company': {
+                target: 'http://localhost:8080',
+                changeOrigin: true,
+                secure: false,
+            },
+            '/tech-stack': {
+                target: 'http://localhost:8080',
+                changeOrigin: true,
+                secure: false,
             }
         }
     }

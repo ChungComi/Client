@@ -67,10 +67,9 @@ ul li {
     color: white;
     border: none;
     border-radius: 20px;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     font-size: 20px;
-    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -133,4 +132,18 @@ ul li {
 
 .close-button:hover {
     background: #cc0000;
+}
+
+.save-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.save-button:hover {
+    background-color: #45a049;
 }

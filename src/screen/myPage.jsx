@@ -258,8 +258,8 @@ const MyPage = () => {
                   {interestOptions
                     .filter(item =>
                       modalType === "tech"
-                        ? !techStack.includes(item.name)
-                        : !companies.includes(item.name)
+                        ? !techStack.some(t => t.techStackName === item.name)
+                        : !companies.some(c => c.companyName === item.name)
                     )
                     .map((item, index) => (
                       <button
@@ -273,6 +273,7 @@ const MyPage = () => {
                         </div>
                       </button>
                     ))}
+
                 </div>
                 <button className="close-button" onClick={closeModal}>닫기</button>
               </>

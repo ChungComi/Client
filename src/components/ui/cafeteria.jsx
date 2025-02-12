@@ -16,6 +16,7 @@ const Cafeteria = () => {
                 method: "GET",
                 headers: { "Content-Type": "application/json" }
             });
+            console.log("🚀 요청 URL:", response.url);
 
             if (!response.ok) {
                 throw new Error("기숙사 식단 정보를 불러오지 못했습니다.");

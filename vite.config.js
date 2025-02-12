@@ -61,17 +61,7 @@ export default defineConfig({
                 changeOrigin: true,
                 secure: false,
             },
-            '/api/dorm': {
-                target: 'http://localhost:8000',
-                changeOrigin: true,
-                secure: false,
-            },
-            '/api/cafeteria': {
-                target: 'http://localhost:8000',
-                changeOrigin: true,
-                secure: false,
-            },
-            '/api/member': {
+            '/api': {
                 target: 'http://localhost:8080',
                 changeOrigin: true,
                 secure: false,
@@ -86,10 +76,11 @@ export default defineConfig({
                 changeOrigin: true,
                 secure: false,
             },
-            '/api/dev-events':{
-                target: 'http://localhost:8001',
+            '/external-api': {
+                target: 'https://serpapi.com', // base URL
                 changeOrigin: true,
-                secure: false,
+                secure: true,
+                rewrite: (path) => path.replace(/^\/external-api/, '') // '/external-api' 제거
             }
         }
     }

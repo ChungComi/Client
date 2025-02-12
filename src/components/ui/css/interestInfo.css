@@ -5,9 +5,9 @@ body {
     padding: 0;
 }
 
-.container {
+.container-interest {
     max-width: 800px;
-    margin: 50px auto;
+    margin: auto;
     background: white;
     padding: 20px;
     border-radius: 10px;

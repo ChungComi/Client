@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./css/cafeteria.css";
+import customFetch from "./customFetch"; // customFetch 임포트
 
 const Cafeteria = () => {
     const [dormMenu, setDormMenu] = useState(null);
@@ -10,21 +11,18 @@ const Cafeteria = () => {
     const [selectedCafeteria, setSelectedCafeteria] = useState("hanbit");
     const [selectedCafeteriaDate, setSelectedCafeteriaDate] = useState(new Date().toISOString().split("T")[0]);
 
+    // ✅ `fetchDormMenu`에서 customFetch 사용
     const fetchDormMenu = async (dormitory = selectedDorm) => {
         try {
-            const response = await fetch(`/api/dorm/${dormitory}`, {
-                method: "GET",
-                headers: { "Content-Type": "application/json" }
+            const response = await customFetch(`/api/dorm/${dormitory}`, {
+                method: "GET"
             });
-            console.log("🚀 요청 URL:", response.url);
 
-            if (!response.ok) {
-                throw new Error("기숙사 식단 정보를 불러오지 못했습니다.");
-            }
+            console.log("🚀 요청 URL:", response.url);
 
             const data = await response.json();
             console.log("✅ 기숙사 응답 데이터:", data);
-            setDormMenu(data);
+            setDormMenu(data.result.data);
             setError(null);
         } catch (err) {
             console.error("❌ API 요청 실패:", err);
@@ -33,20 +31,16 @@ const Cafeteria = () => {
         }
     };
 
+    // ✅ `fetchCafeteriaMenu`에서 customFetch 사용
     const fetchCafeteriaMenu = async (cafeteria = selectedCafeteria) => {
         try {
-            const response = await fetch(`/api/cafeteria/${cafeteria}`, {
-                method: "GET",
-                headers: { "Content-Type": "application/json" }
+            const response = await customFetch(`/api/cafeteria/${cafeteria}`, {
+                method: "GET"
             });
-
-            if (!response.ok) {
-                throw new Error("학생식당 식단 정보를 불러오지 못했습니다.");
-            }
 
             const data = await response.json();
             console.log("✅ 학식 응답 데이터:", data);
-            setCafeteriaMenu(data);
+            setCafeteriaMenu(data.result.data);
             setError(null);
         } catch (err) {
             console.error("❌ API 요청 실패:", err);

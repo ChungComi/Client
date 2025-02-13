@@ -59,9 +59,9 @@ const Board = () => {
     // 검색 옵션에 따라 엔드포인트 선택
     let endpoint = "";
     if (searchType === "title") {
-      endpoint = `/post/title/${searchInput}`;
+      endpoint = `/api/post/title/${searchInput}`;
     } else if (searchType === "author") {
-      endpoint = `/post/member/${searchInput}`;
+      endpoint = `/api/post/member/${searchInput}`;
     }
     if(searchInput === ""){
         alert("검색어를 입력해주세요")

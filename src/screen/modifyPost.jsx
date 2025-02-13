@@ -36,7 +36,7 @@ const ModifyPost = () => {
     const modifiedAt = new Date().toISOString();
     const modifiedPost = { title, content, modifiedAt };
 
-    customFetch(`/post/${postId}`, {
+    customFetch(`/api/post/${postId}`, {
       method: 'PUT', // 수정에는 PUT 또는 PATCH를 사용합니다.
       headers: {
         'Content-Type': 'application/json',

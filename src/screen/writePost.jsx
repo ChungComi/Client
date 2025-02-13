@@ -14,7 +14,7 @@ const WritePost = () => {
     const newPost = { title, content };
 
     // 글 작성 API 호출 (POST 요청)
-    customFetch('/post', {
+    customFetch('/api/post', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

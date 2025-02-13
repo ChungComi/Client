@@ -43,15 +43,15 @@ const Post = () => {
       .catch(error => console.error("회원 정보 요청 중 에러 발생:", error));
   };
 
-  // 컴포넌트 마운트 시 게시글 정보와 회원 정보를 불러옵니다.
+  //컴포넌트 마운트 시 게시글 정보와 회원 정보를 불러옵니다.
   useEffect(() => {
     getPostInfo();
     refreshMemberInfo();
-  }, [postId]);
+  }, []);
 
   const deletePost = () => {
           if (postId) {
-            customFetch(`/post/${postId}`, {method: "DELETE"})
+            customFetch(`/api/post/${postId}`, {method: "DELETE"})
               .then((res) => res.json())
               .then((data) => {
                 if (data.success) {

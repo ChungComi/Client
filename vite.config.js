@@ -76,11 +76,6 @@ export default defineConfig({
                 changeOrigin: true,
                 secure: false,
             },
-            '/post': {
-                target: 'http://localhost:8080',
-                changeOrigin: true,
-                secure: false,
-            },
             '/external-api': {
                 target: 'https://serpapi.com', // base URL
                 changeOrigin: true,

@@ -1,3 +1,4 @@
+/* Container 스타일 */
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -7,6 +8,13 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Post Header 영역 */
+.post-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
 .post-title {
     text-align: center;
     color: #333;
@@ -14,14 +22,56 @@
     margin-bottom: 10px;
 }
 
+/* Post Meta: 작성자, 조회수 및 액션 버튼 */
 .post-meta {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
     font-size: 14px;
     color: #666;
     margin-bottom: 15px;
 }
 
+.post-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* 버튼 스타일 */
+.edit-button,
+.delete-button {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.delete-button:hover {
+    background-color: #b02a37;
+}
+
+/* Post Content 영역 */
 .post-content {
     font-size: 16px;
     color: #444;
@@ -31,6 +81,7 @@
     margin-bottom: 20px;
 }
 
+/* Comments Section */
 .comments-section {
     margin-top: 20px;
 }
@@ -40,12 +91,14 @@
     color: #333;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .comment {
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
+    background: #f1f1f1;
 }
 
 .comment p {

@@ -13,6 +13,7 @@ import Post from "./screen/post.jsx";
 import Cafeteria from "./components/ui/cafeteria.jsx";
 import Announcement from "./components/ui/announcement.jsx";
 import WritePost from "./screen/writePost.jsx";
+import ModifyPost from "./screen/modifyPost.jsx"
 
 const App = () => {
     const location = useLocation();
@@ -29,7 +30,8 @@ const App = () => {
                     <Route path="/mypage" element={<MyPage />} />
                     <Route path="/interestInfo" element={<InterestInfo />} />
                     <Route path="/board" element={<Board />} />
-                    <Route path="/post" element={<Post />} />
+                    <Route path="/post/:postId" element={<Post />} />
+                    <Route path="/modifyPost/:postId" element={<ModifyPost />} />
                     <Route path="/writePost" element={<WritePost/>}/>
                     <Route path="/cafeteria" element={<Cafeteria />} />
                     <Route path="/announcement" element={<Announcement/>}/>

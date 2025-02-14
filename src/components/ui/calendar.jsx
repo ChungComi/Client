@@ -98,7 +98,7 @@ const Calendar = () => {
     for (let day = 1; day <= daysInMonth; day++) {
       // monthSchedules는 현재 달의 모든 일정입니다.
       const hasSchedule = monthSchedules.some((schedule) => {
-        const scheduleDate = new Date(schedule.date);
+        const scheduleDate = new Date(schedule);
         return (
             scheduleDate.getFullYear() === currentYear &&
             scheduleDate.getMonth() === currentMonth &&

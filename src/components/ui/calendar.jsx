@@ -32,7 +32,7 @@ const Calendar = () => {
   const fetchSchedulesForDate = async (dateStr) => {
     try {
       const response = await customFetch(
-          `/schedule?date=${encodeURIComponent(dateStr)}`,
+          `/api/schedule/${encodeURIComponent(dateStr)}`,
           { method: "GET" }
       );
       const data = await response.json();

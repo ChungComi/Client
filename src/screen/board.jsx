@@ -30,6 +30,7 @@ const Board = () => {
     customFetch('/api/post')
       .then((res) => res.json())
       .then((data) => {
+        console.log(data.result)
         if (data.success) {
           // 응답 구조가 data.result.data로 post 개수를 반환한다고 가정
           const postNum = data.result.data;

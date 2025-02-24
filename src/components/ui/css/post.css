@@ -106,3 +106,41 @@
     color: #333;
     margin: 0;
 }
+
+/* 댓글 액션 버튼 (좋아요, 대댓글) */
+.comment-actions button {
+    margin-right: 8px;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 좋아요 버튼 스타일 */
+.like-button {
+    background-color: #28a745;
+    color: #fff;
+}
+.like-button:hover {
+    background-color: #218838;
+}
+
+/* 대댓글 버튼 스타일 */
+.reply-button {
+    background-color: #17a2b8;
+    color: #fff;
+}
+.reply-button:hover {
+    background-color: #138496;
+}
+
+/* 좋아요 개수 표시 */
+.like-count {
+    font-weight: bold;
+    color: #ff4500;
+    font-size: 12px;
+    margin-right: 8px;
+}
+

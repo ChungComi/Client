@@ -24,14 +24,12 @@ const MyPage = () => {
       .then(data => {
         if (data.success && data.result) {
           const member = data.result.data;
+          console.log(member);
           setName(member.name);
           setSchool(member.school ? member.school.name : "");
-          const techStacks = member.memberTechStacks
-          const companiesData = member.memberCompanies
-          console.log("기술 스택:", techStacks);
-          console.log("관심 기업:", companiesData);
-          setTechStack(techStacks);
-          setCompanies(companiesData);
+          // API에서 받아온 배열로 상태 업데이트
+          setTechStack(member.memberTechStacks);
+          setCompanies(member.memberCompanies);
         } else {
           console.error("회원 정보를 가져오지 못했습니다.", data);
         }
@@ -94,7 +92,9 @@ const MyPage = () => {
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            refreshMemberInfo();
+            // optimistic update: 바로 상태에 새 항목 추가
+            setTechStack(prev => [...prev, { techStackName: value }]);
+            // 필요하다면 refreshMemberInfo(); 호출
           } else {
             console.error("기술 스택 추가 실패:", data);
           }
@@ -111,7 +111,9 @@ const MyPage = () => {
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            refreshMemberInfo();
+            // optimistic update: 바로 상태에 새 항목 추가
+            setCompanies(prev => [...prev, { companyName: value }]);
+            // 또는 refreshMemberInfo();
           } else {
             console.error("기업 추가 실패:", data);
           }
@@ -132,7 +134,9 @@ const MyPage = () => {
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          refreshMemberInfo();
+          // optimistic update: 해당 기업을 상태에서 제거
+          setCompanies(prev => prev.filter(c => c.companyName !== companyName));
+          // 또는 refreshMemberInfo();
         } else {
           console.error("관심 기업 삭제 실패:", data);
         }
@@ -148,14 +152,15 @@ const MyPage = () => {
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          refreshMemberInfo();
+          // optimistic update: 해당 기술 스택을 상태에서 제거
+          setTechStack(prev => prev.filter(t => t.techStackName !== techStackName));
+          // 또는 refreshMemberInfo();
         } else {
           console.error("기술 스택 삭제 실패:", data);
         }
       })
       .catch(error => console.error("기술 스택 삭제 요청 중 에러 발생:", error));
   };
-
 
   // 학교 입력 및 저장 (POST /api/member/school)
   const handleSchoolChange = (e) => {
@@ -209,7 +214,8 @@ const MyPage = () => {
           {techStack.map((tech, index) => (
             <li key={index}>
               <span>{tech.techStackName}</span>
-              <button className="remove-button" onClick={() => removeTechStack(tech)}>-</button>
+              {/* removeTechStack에 techStackName을 직접 전달 */}
+              <button className="remove-button" onClick={() => removeTechStack(tech.techStackName)}>-</button>
             </li>
           ))}
         </ul>
@@ -224,7 +230,8 @@ const MyPage = () => {
           {companies.map((company, index) => (
             <li key={index}>
               <span>{company.companyName}</span>
-              <button className="remove-button" onClick={() => removeCompany(company)}>-</button>
+              {/* removeCompany에 companyName을 직접 전달 */}
+              <button className="remove-button" onClick={() => removeCompany(company.companyName)}>-</button>
             </li>
           ))}
         </ul>
@@ -273,7 +280,6 @@ const MyPage = () => {
                         </div>
                       </button>
                     ))}
-
                 </div>
                 <button className="close-button" onClick={closeModal}>닫기</button>
               </>

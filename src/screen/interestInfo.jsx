@@ -78,6 +78,7 @@ const TechCompanyInfo = () => {
                         source: news.source.name ?? "출처 미상",
                         date: formatDate(news.date)
                     }));
+                console.log(newsData);
                     setTechStackNewsInfo(newsData);
                 }else {
                     setTechStackNewsInfo([]); // 실패 시 빈 배열 설정
@@ -109,7 +110,7 @@ const TechCompanyInfo = () => {
 
         try {
             const newsPromises = techStack.map(t =>
-                fetch(`/external-api/search.json?engine=google_news&q=${encodeURIComponent(t.techStackName)}+개발&gl=kr&hl=ko&when=24h&api_key=41d2aa8433f65aebab48a03f43ddd467df634de09376c3ddb9d41fd3f6795672`)
+                fetch(`/external-api/search.json?engine=google_news&q=${encodeURIComponent(t.techStackName)}+개발&gl=kr&hl=ko&when=24h&api_key=98711ebabe53ab4a92e0ae0475f02dec48c498ba3944d87628e429b30658f0f7`)
                     .then(response => response.json())
                     .then(data => {
                         if (data.news_results) {
@@ -201,8 +202,7 @@ const TechCompanyInfo = () => {
                     <span className="title">설정한 기술 스택 </span>
                     <span className="tech-list">
                     {techStack.length > 0
-                        ?
-                        console.log(techStack)
+                        ? techStack.map(t => t.techStackName).join(", ")
                         : "설정된 기술 스택이 없습니다."}
                 </span>
                     <ul>
